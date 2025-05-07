@@ -3,6 +3,7 @@
 This project implements a **deep learning-based image steganography system** using a **DCGAN-style architecture** to encode and decode hidden messages within generated face images from the CelebA dataset.
 
 Originally, the goal was to find a way to implement a steganographic system that is photo-resilient, however, through analysis of different techniques I have arrived at a DCGAN-style architecture that lays the grounds for eventually making a system that is photo-resilient.
+
 ---
 
 ## Project Overview
