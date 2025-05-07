@@ -80,6 +80,16 @@ Decoded message:  hello world
 Bit accuracy:     98.75%
 ```
 
+## My tests
+
+Here is the "natural" image i generated with the string "Hello World"
+
+![stego_result](https://github.com/user-attachments/assets/dbfa148c-def4-4539-a9e7-de7b7a1221db)
+
+After running the decoder we are successfully able to get the message.
+![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
+
+
 ---
 
 ## 📝 Notes
