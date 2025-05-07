@@ -31,19 +31,23 @@ project/
 
 ## How It Works
 
-1. **Message Encoding:**
+0. **Datasets**
+   - I used the aligned and cropped photos from CelebA Datasets
+   - https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+
+2. **Message Encoding:**
    - A text message (e.g., `"hello world"`) is converted into a binary string.
    - Each bit is mapped to a float: `1 → +1.0`, `0 → -1.0`, forming the latent vector `z`.
 
-2. **Image Generation:**
+3. **Image Generation:**
    - The generator `G(z)` maps `z` into a 64x64 RGB image resembling a face.
    - This image is saved as `stego_result.png`.
 
-3. **Message Decoding:**
+4. **Message Decoding:**
    - The decoder `Dᵤ(img)` extracts a predicted `ẑ` from the image.
    - Bit-by-bit comparison reconstructs the original message.
 
-4. **Bit Accuracy:**
+5. **Bit Accuracy:**
    - The system reports the % of bits correctly recovered from the image.
    - This gives insight into the fidelity and robustness of the encoding.
 
