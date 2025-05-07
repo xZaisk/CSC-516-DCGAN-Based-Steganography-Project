@@ -94,6 +94,13 @@ After running the decoder we are successfully able to get the message.
 ![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
 
 
+I generated another image with the message "Andrew says hello":
+![image](https://github.com/user-attachments/assets/f073deb1-d356-4c90-a5b7-7c155b1a33a8)
+
+Here is the output of the decoder:
+![image](https://github.com/user-attachments/assets/fcc83d22-48cb-4ee6-8d9c-e5cb7c86a3bb)
+
+So although its not perfect, it does pretty well.
 ---
 
 ## 📝 Notes
