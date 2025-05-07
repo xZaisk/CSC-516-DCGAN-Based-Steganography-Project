@@ -25,6 +25,7 @@ project/
 │   ├── netDec.pth           # Trained decoder
 │   ├── stego_result.png     # Image generated from a message
 │   └── epoch_XXX.png        # Sample outputs per epoch
+│   └── new_stego_image.png  # Generated image with specific string
 ├── img_align_celeba/        # CelebA dataset (downloaded separately)
 ```
 
