@@ -30,25 +30,50 @@ project/
 
 ---
 
+## Step by Step
+
+1. Download the CelebA Dataset (aligned)
+ - https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
+ - Extract and place folder in project dir
+
+2. Place All Files in the Same Directory
+ - Make sure all py files are in the same dir
+ - `dcgan_based_trainer_v2_4.py`
+ - `image_generator.py`
+ - `decode_image_v1_6.py`
+ - `img_align_celeba` (contains all the images)
+
+3. Train the Model
+ - `python dcgan_based_trainer_v2_4.py`
+ - This trains the generator, decoder, and discriminator using the CelebA dataset.
+ - After training, it saves `output/netG.pth`, `output/netDec.pth`, and up to 30 epochs`output/epoch_30.png` (you can change via `num_epochs = 30`
+ - It does a test that generates an image based on the string 'hello world' and attempts to decode it
+
+4. Generate a New Image with a Message
+ - You can make your own image based on your own message with `image_generator.py`
+ - Enter a text message (max ~12–13 characters).
+
+5. Decode a Message from an Image
+ - `python decode_image_v1_6.py`
+ -  enter the name of an image file
+ -  The decoder will extract and print the message
+
+
 ## How It Works
 
-0. **Datasets**
-   - I used the aligned and cropped photos from CelebA Datasets
-   - https://mmlab.ie.cuhk.edu.hk/projects/CelebA.html
-
-2. **Message Encoding:**
+1. **Message Encoding:**
    - A text message (e.g., `"hello world"`) is converted into a binary string.
    - Each bit is mapped to a float: `1 → +1.0`, `0 → -1.0`, forming the latent vector `z`.
 
-3. **Image Generation:**
+2. **Image Generation:**
    - The generator `G(z)` maps `z` into a 64x64 RGB image resembling a face.
    - This image is saved as `stego_result.png`.
 
-4. **Message Decoding:**
+3. **Message Decoding:**
    - The decoder `Dᵤ(img)` extracts a predicted `ẑ` from the image.
    - Bit-by-bit comparison reconstructs the original message.
 
-5. **Bit Accuracy:**
+4. **Bit Accuracy:**
    - The system reports the % of bits correctly recovered from the image.
    - This gives insight into the fidelity and robustness of the encoding.
 
@@ -95,13 +120,13 @@ After running the decoder we are successfully able to get the message.
 ![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
 
 
-I generated another image with the message "Andrew says hello":
+I generated another image with the message "Andrew says hello" which is outside the character limit:
 ![image](https://github.com/user-attachments/assets/f073deb1-d356-4c90-a5b7-7c155b1a33a8)
 
 Here is the output of the decoder:
 ![image](https://github.com/user-attachments/assets/fcc83d22-48cb-4ee6-8d9c-e5cb7c86a3bb)
 
-It performs pretty well, although there can be an improvement. 
+It performs pretty well, although there can be an improvement in the length of the string. 
 ---
 
 ## Notes
