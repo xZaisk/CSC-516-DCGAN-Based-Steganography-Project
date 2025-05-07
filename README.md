@@ -18,7 +18,8 @@ I trained a **Generator (G)** to convert a latent vector `z` into realistic face
 project/
 │
 ├── dcgan_based_trainer_v2_4.py               # Main training script
-├── decode_image_v1_6.py                # Decoding-only script (no retraining needed)
+├── decode_image_v1_6.py                      # Decoding-only script (no retraining needed)
+├── image_generator.py                        # generates an image based on your string
 ├── output/
 │   ├── netG.pth             # Trained generator
 │   ├── netDec.pth           # Trained decoder
@@ -86,7 +87,7 @@ Bit accuracy:     98.75%
 
 ## My tests
 
-Here is the "natural" image i generated with the string "Hello World"
+Here is the "natural" image i generated with the string "Hello World" when first training the mode
 
 ![stego_result](https://github.com/user-attachments/assets/dbfa148c-def4-4539-a9e7-de7b7a1221db)
 
@@ -100,14 +101,25 @@ I generated another image with the message "Andrew says hello":
 Here is the output of the decoder:
 ![image](https://github.com/user-attachments/assets/fcc83d22-48cb-4ee6-8d9c-e5cb7c86a3bb)
 
-So although its not perfect, it does pretty well.
+It performs pretty well, although there can be an improvement. 
 ---
 
-## 📝 Notes
+## Notes
 
 - I used **MSE Loss** for reconstruction and **BCELoss** for adversarial training.
 - `lambda_recon` balances realism vs latent recovery. Higher values prioritize message integrity.
 
 ---
 
+## Discussion
+This project demonstrates that it's possible to encode and recover messages directly from synthetic images with impressive accuracy, leveraging DCGAN architecture. Rather than hiding information in existing cover images, the image itself is the message—making it an inherently stealthy approach.
 
+### Limitations:
+- Image fragility: Small distortions (e.g., compression, screenshots, or social media filters) may significantly degrade message accuracy.
+- Message length: Limited by the size of the latent vector z (currently 100 bits ≈ 12–13 characters).
+- Domain-specific generation: Since training uses CelebA, all generated images are human faces—making it less flexible for general-purpose use.
+
+### Possible Improvements:
+- **Error correction:** Integrate bit redundancy or ECC (e.g., Hamming codes) to recover messages with higher tolerance.
+- Larger or variable-length encoding: Train with dynamic latent vector sizes or multi-image message splitting.
+- **Transfer to natural steganography:** Use the decoder on screenshots of generated images to test photo-resilience.
