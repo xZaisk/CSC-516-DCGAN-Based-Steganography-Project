@@ -1,10 +1,10 @@
-# 🔒 GAN-Based Image Steganography with Decoder
+# GAN-Based Image Steganography with Decoder
 
 This project implements a **deep learning-based image steganography system** using a **DCGAN-style architecture** to encode and decode hidden messages within generated face images from the CelebA dataset.
 Originally, the goal was to find a way to implement a steganographic system that is photo-resilient, however, through analysis of different techniques I have arrived at a DCGAN-style architecture that lays the grounds for eventually making a system that is photo-resilient.
 ---
 
-## 🧠 Project Overview
+## Project Overview
 
 I trained a **Generator (G)** to convert a latent vector `z` into realistic face images, while simultaneously training a **Decoder (Dᵤ)** to reverse-engineer that image and reconstruct `z`. By embedding a binary-encoded message directly into the latent space, the system generates an image that *is the message*. No additional payload is hidden—**the entire image represents the message**.
 
