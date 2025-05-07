@@ -1,4 +1,4 @@
-# GAN-Based Image Steganography with Decoder
+# Deep Convolutional GAN-Based Image Steganography with Decoder
 
 This project implements a **deep learning-based image steganography system** using a **DCGAN-style architecture** to encode and decode hidden messages within generated face images from the CelebA dataset.
 
