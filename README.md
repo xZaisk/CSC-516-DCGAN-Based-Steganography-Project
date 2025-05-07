@@ -110,23 +110,37 @@ Decoded message:  hello world
 Bit accuracy:     98.75%
 ```
 
-## My tests
+## ✅ Message Encoding & Decoding Tests
 
-Here is the "natural" image i generated with the string "Hello World" when first training the mode
+### **Test 1 – Message: `"Hello World"`**
+- **Purpose:** Evaluate fidelity of image-based message recovery during initial training.
+- **Input Message:**  
+  `Hello World`
 
-![stego_result](https://github.com/user-attachments/assets/dbfa148c-def4-4539-a9e7-de7b7a1221db)
+- **Generated Image:**  
+  ![stego_result](https://github.com/user-attachments/assets/dbfa148c-def4-4539-a9e7-de7b7a1221db)
 
-After running the decoder we are successfully able to get the message.
-![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
+- **Decoded Output:**  
+  ![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
+
+> ✅ The model successfully reconstructed the message with high bit accuracy.
+
+---
+
+### **Test 2 – Message: `"Andrew says hello"`**
+- **Purpose:** Test message length near or above capacity limits.
+- **Input Message:**  
+  `Andrew says hello`
+
+- **Generated Image:**  
+  ![image](https://github.com/user-attachments/assets/f073deb1-d356-4c90-a5b7-7c155b1a33a8)
+
+- **Decoded Output:**  
+  ![image](https://github.com/user-attachments/assets/fcc83d22-48cb-4ee6-8d9c-e5cb7c86a3bb)
+
+>  The decoder recovered a mostly correct message. Slight truncation or distortion suggests room for improvement in message capacity and decoding accuracy.
 
 
-I generated another image with the message "Andrew says hello" which is outside the character limit:
-![image](https://github.com/user-attachments/assets/f073deb1-d356-4c90-a5b7-7c155b1a33a8)
-
-Here is the output of the decoder:
-![image](https://github.com/user-attachments/assets/fcc83d22-48cb-4ee6-8d9c-e5cb7c86a3bb)
-
-It performs pretty well, although there can be an improvement in the length of the string. 
 ---
 
 ## Notes
