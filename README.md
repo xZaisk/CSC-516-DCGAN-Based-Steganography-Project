@@ -110,7 +110,7 @@ Decoded message:  hello world
 Bit accuracy:     98.75%
 ```
 
-## ✅ Message Encoding & Decoding Tests
+## Message Encoding & Decoding Tests
 
 ### **Test 1 – Message: `"Hello World"`**
 - **Purpose:** Evaluate fidelity of image-based message recovery during initial training.
@@ -123,7 +123,7 @@ Bit accuracy:     98.75%
 - **Decoded Output:**  
   ![image](https://github.com/user-attachments/assets/30193914-4b56-4e7e-8af4-143161646004)
 
-> ✅ The model successfully reconstructed the message with high bit accuracy.
+> The model successfully reconstructed the message with high bit accuracy.
 
 ---
 
